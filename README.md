@@ -7,7 +7,6 @@ This repository contains an example of a client application for the Toyota HSR u
 In ```hsr-docker-client-example/start.sh``` modify the following line as appropriate:
 ```
 export ROS_IP=192.168.1.224 # this is the IP of your machine on the network, not the HSR
-
 ```
 
 ## Usage
