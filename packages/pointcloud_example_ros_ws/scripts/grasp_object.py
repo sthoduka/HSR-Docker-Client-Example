@@ -9,7 +9,6 @@ target_pose = None
 
 def pose_cb(msg):
     global target_pose
-    rospy.loginfo("Got pose!")
     target_pose = msg
 
 
@@ -28,14 +27,17 @@ def main():
     base.go_rel(0, target_pose.pose.position.y - 0.078, 0)
     target_pose = None
     whole_body.move_to_neutral()
+    whole_body.move_to_joint_positions({'head_pan_joint': 0.0, 'head_tilt_joint': -0.3})
     while target_pose is None:
         rospy.sleep(1)
     print(target_pose.pose.position)
-    rospy.loginfo("Got pose here!")
+    rospy.loginfo("Got object pose!")
     pos = target_pose.pose.position
+    hsr_pose = geometry.pose(0.287, 0.078, pos.z, 0.041, -1.569, 3.101)
+    whole_body.move_end_effector_pose(pose, ref_frame_id='base_link')
     hsr_pose = geometry.pose(pos.x, 0.078, pos.z, 0.041, -1.569, 3.101)
     try:
-        whole_body.move_end_effector_pose(pose, 'base_link')
+        whole_body.move_end_effector_pose(pose, ref_frame_id='base_link')
     except:
         rospy.logerr("Failed to move")
 
