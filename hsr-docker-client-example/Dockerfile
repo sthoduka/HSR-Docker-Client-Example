@@ -29,6 +29,7 @@ RUN git clone https://github.com/care-group/HSR-Docker-Client-Example.git
 
 # Move the ROS packages into place
 RUN mv HSR-Docker-Client-Example/packages/hsr_head_positioner /home/root/catkin_ws/src
+RUN mv HSR-Docker-Client-Example/packages/pointcloud_example_ros_ws /home/root/catkin_ws/src
 
 # Initialise the catkin workspace and catkin_make
 RUN . /opt/ros/melodic/setup.sh && catkin_init_workspace /home/root/catkin_ws/src

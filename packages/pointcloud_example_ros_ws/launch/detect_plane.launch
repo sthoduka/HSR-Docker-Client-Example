@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="pointcloud_example_ros_ws" type="detect_plane_node" name="detect_plane_node" output="screen" respawn="false">
+        <remap from="~input_pointcloud_topic" to="/hsrb/head_rgbd_sensor/depth_registered/rectified_points" />
+        <remap from="~output_pointcloud_topic" to="/plane_detection/plane" />
+        <param name="passthrough_x_max" type="double" value="0.8" />
+    </node>
+</launch>

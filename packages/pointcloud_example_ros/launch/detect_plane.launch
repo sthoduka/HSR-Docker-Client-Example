@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-    <node pkg="pointcloud_example_ros" type="detect_plane_node" name="detect_plane_node" output="screen" respawn="false">
-        <remap from="~input_pointcloud_topic" to="/arm_cam3d/depth_registered/points" />
-        <remap from="~output_pointcloud_topic" to="/plane_detection/plane" />
-    </node>
-</launch>

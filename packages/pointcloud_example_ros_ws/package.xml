@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>pointcloud_example_ros</name>
+  <name>pointcloud_example_ros_ws</name>
   <version>0.1.0</version>
   <description>ROS node to detect a plane in a pointcloud</description>
   <maintainer email="santosh.thoduka@gmail.com">Santosh Thoduka</maintainer>
